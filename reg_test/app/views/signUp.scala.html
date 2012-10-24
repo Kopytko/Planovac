@@ -1,0 +1,19 @@
+@(registrationForm: Form[User])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Calendar"){
+    
+    <h3>Create an Account</h3>
+    
+    @form(routes.Application.signUp()) {    	
+    	@inputText(registrationForm("email"), '_label -> "Your current email address:")    	
+    	@inputPassword(registrationForm("password"), '_label -> "Choose a password:") 
+    	@inputPassword(registrationForm("rePassword"), '_label -> "Re-enter password:")
+    	@inputText(registrationForm("firstName"), '_label -> "First name:") 
+    	@inputText(registrationForm("lastName"), '_label -> "Last name:")
+    	@inputText(registrationForm("birthday"), '_label -> "Birthday:")     	
+    	<input type="submit" class="btn" value="Create my account"></div> 
+    }
+    
+}

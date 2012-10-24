@@ -1,0 +1,29 @@
+@(signInForm: Form[User])(divClass: String)(helpMessage: String)
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Calendar") {
+
+    <ul class="breadcrumb">
+    <li><a href="signup" class="btn btn-danger">SIGN UP</a></li>    
+    </ul>
+	<br>
+	<h2>Sign in</h2>        
+    
+    @form(routes.Application.signIn()) {
+    
+    	@inputText(signInForm("email"), '_label -> <b>Email</b>)
+    			
+		<div class="@divClass" id="password_field">
+    		<label for="password"><b>Password</b></label>
+    		<div class="input">
+    			<input type="password" id="password" name="password" value="" >        		
+        		<span class="help-block">@helpMessage</span> 
+    		</div>
+		</div>
+		    	    	    	     	    
+    	<input type="submit" class="btn btn-primary" value="Sign in"> 
+    }
+    
+}
